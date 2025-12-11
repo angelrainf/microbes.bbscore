@@ -59,9 +59,7 @@ Where:
 ## Rating update
 
 $$
-\text{Rating}_{t+1,i} =
-\text{Rating}_{t,i}
-+ K\left(S_{\text{observed},i} - S_{\text{expected},i}\right)
+\text{Rating}_{t+1,i} =\text{Rating}_{t,i}+ K\left(S_{\text{observed},i} - S_{\text{expected},i}\right)
 $$
 
 Where:
