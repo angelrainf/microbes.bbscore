@@ -62,10 +62,11 @@ $$
 \text{Rating}_{t+1,i} =
 \text{Rating}_{t,i}
 + K\left(S_{\text{observed},i} - S_{\text{expected},i}\right)
+$$
 
 Where:
 - K = gain factor (default 10)
-- \(S_{\text{observed},i}\) and \(S_{\text{expected},i}\) come from the equations above.
+- $$\(S_{\text{observed},i}\) and \(S_{\text{expected},i}\)$$ come from the equations above.
 ## Absence correction (BB-score logic)
 
 In corrected mode, absent OTUs are penalized using the last-ranked present OTU.
