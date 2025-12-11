@@ -19,9 +19,9 @@ CSV matrices like MatrixRank_MAPbiomes_<biome>.csv.
 
 Example:
 
-| rank1 | rank2 | rank3 |
-|-------|-------|-------|
-| OTU_A | OTU_B | OTU_C |
+|   rank1  |  rank2   |   rank3  |   rank4  |   rank5  |
+|----------|----------|----------|----------|----------|
+| Specie_A | Specie_B | Specie_C | Specie_D | Specie_E |
 
 ## Observed score function
 
