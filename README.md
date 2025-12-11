@@ -27,13 +27,13 @@ Example:
 ## Scoring function
 
 Observed scores follow the exponential decay function used in the manuscript:
-
+$$
 \[
 S_{\text{observed},i}
 = \frac{\alpha^{(N-P_i)} - 1}{\sum_{j=1}^{N} \left( \alpha^{(N-P_j)} - 1 \right)}
 \tag{1}
 \]
-
+$$
 Where:  
 - \(N\) = number of present OTUs in the game,  
 - \(P_i\) = rank position of OTU \(i\),  
