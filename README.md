@@ -36,7 +36,7 @@ $$
 
 Where:
 - \(N\) = number of OTUs in the game.  
-- \(P_i\) = rank position of OTU \(i\) (1 = best).  
+- \(P\_i\) = rank position of OTU \(i\) (1 = best).  
 - \(\alpha\) = base coefficient (`base_coef` in the script).  
 - Scores are normalized to sum to 1, and ties share the mean score.
 
@@ -75,9 +75,7 @@ $$
 $$
 
 $$R_{\text{last}}$$ = rating of the lowest-ranked present OTU before updating
-
 $$R'_{\text{last}}$$  = rating after updating
-
 $$\Delta$$ is added to all absent OTUs.
 
 This breaks zero-sum Elo and implements BB-score absence penalization.
