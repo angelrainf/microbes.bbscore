@@ -93,33 +93,19 @@ python3 MultiElo_switchable.py --mode classic --input MatrixForElo --output resu
 
 Corrected mode with fixed base coefficient:
 
-```bash
-python3 MultiElo_switchable.py \
-  --mode corrected \
-  --input "MatrixForElo/set1.matrank/MatrixRank_MAPbiomes_*.csv" \
-  --output ../02_results_Elo_Python \
-  --subsample 1059 \
-  --iters 1000 \
-  --workers 50 \
-  --seed 666 \
-  --K 10 \
-  --D 400 \
-  --coef-value 1.017
-```
-
 ## Main command-line options
 
 --mode classic|corrected
---input <directory or glob>
---output <directory>
---subsample <int>
---iters <int>
---workers <int>
---seed <int>
---K <float>
---D <float>
---coef-file <csv>
---coef-value <float>
+--input <directory or glob> \
+--output <directory> \
+--subsample <int> \
+--iters <int> \
+--workers <int> \
+--seed <int> \
+--K <float> \
+--D <float> \
+--coef-file <csv> \
+--coef-value <float> \
 
 ## Output
 
