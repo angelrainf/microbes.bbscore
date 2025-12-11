@@ -2,21 +2,21 @@
 
 Multiplayer Elo ranking for OTUs.  
 Two modes are available: `classic` and `corrected`.  
-Corrected mode adds the last-place rating change to all absent OTUs in each game.
+Corrected mode introduces an absence penalty identical to the Baas-Becking score (BB-score) concept.
 
 ## Concept
 
 Each sample (row) is treated as one multiplayer “game”.  
 OTUs listed left-to-right are ranked best-to-worst in that sample.  
-The script shuffles the order of games in every iteration to reduce order effects.
+Each iteration shuffles game order to reduce sequence effects.
 
 ## Input
 
 CSV matrices like `MatrixRank_MAPbiomes_<biome>.csv`.  
 Rows = samples.  
-Columns = ordered OTU ranks for each sample.  
-Empty, `None`, and `NaN` cells are ignored.  
-A `date` column may exist and is ignored.
+Columns = ordered OTU ranks.  
+Empty, `None`, or `NaN` cells are ignored.  
+A `date` column is ignored.
 
 Example:
 
@@ -24,36 +24,72 @@ Example:
 |-------|-------|-------|
 | OTU_A | OTU_B | OTU_C |
 
-## Scoring and rating update
+## Scoring function
 
-Actual scores follow an exponential rule and sum to 1:
+Observed scores follow the exponential decay function used in the manuscript:
 
-`S_r ∝ base_coef^(n - r) - 1`
+\[
+S_{\text{observed},i}
+= \frac{\alpha^{(N-P_i)} - 1}{\sum_{j=1}^{N} \left( \alpha^{(N-P_j)} - 1 \right)}
+\tag{1}
+\]
 
-Ties share the mean score for that rank.
+Where:  
+- \(N\) = number of present OTUs in the game,  
+- \(P_i\) = rank position of OTU \(i\),  
+- \(\alpha\) = base coefficient,  
+- Scores sum to 1 and ties share the mean score.
 
-Expected scores come from pairwise logistic win probabilities:
+## Expected scores
 
-`P(i beats j) = 1 / (1 + 10^(-(R_i - R_j) / D))`
+Expected scores follow the logistic formulation:
 
-Expected scores are normalized across players.
+\[
+S_{\text{expected},i}
+= \frac{\sum_{j \neq i} \frac{1}{1 + 10^{\frac{(R_j - R_i)}{D}}}}
+{n (n - 1)/2}
+\tag{3}
+\]
 
-Rating update:
+Where:  
+- \(n\) = number of OTUs in the match,  
+- \(R_i\) = rating of OTU \(i\),  
+- \(D\) = logistic scale (default 400).
 
-`R' = R + K * (S - E)`
+## Rating update
 
-### Absence correction (corrected mode)
+Ratings for present OTUs are updated as:
 
-After updating present OTUs, compute the last-place rating change:
+\[
+\text{Rating}_{t+1,i}
+= \text{Rating}_{t,i}
++ K \left( S_{\text{observed},i} - S_{\text{expected},i} \right)
+\tag{2}
+\]
 
-`Δ = R'last − Rlast`
+Where \(K\) is the gain factor (default 10).
 
-Add `Δ` to all OTUs absent from that game.
+## Absence correction (BB-score logic)
+
+The script implements the absence penalty exactly as used in the BB-score method.
+
+After updating present OTUs using equation (2), compute the rating change of the last-ranked present OTU:
+
+\[
+\Delta = R'_{\text{last}} - R_{\text{last}}
+\]
+
+Where:  
+- \(R_{\text{last}}\) = rating of the lowest-ranked present OTU before updating,  
+- \(R'_{\text{last}}\) = rating of the same OTU after updating,  
+- \(\Delta\) = rating change applied to **all absent OTUs**.
+
+Every absent OTU receives this same \(\Delta\), breaking the zero-sum constraint and producing BB-scores.
 
 ## Install
 
 Requires Python 3.8+.  
-Install dependencies:
+Dependencies:
 
 ```bash
 pip install numpy pandas
