@@ -86,31 +86,31 @@ Requires Python 3.8+.
 pip install numpy pandas
 
 ## Usage
+Run on a directory:
+```bash
+python3 MultiElo_switchable.py \
+  --mode classic \
+  --input MatrixForElo \
+  --output results
+```
 
-Classic Elo:
 
-python3 MultiElo_switchable.py --mode classic --input MatrixForElo --output results
 
-Corrected mode with fixed base coefficient:
 
 ## Main command-line options
 
---mode classic|corrected
---input <directory or glob> \
---output <directory> \
---subsample <int> \
---iters <int> \
---workers <int> \
---seed <int> \
---K <float> \
---D <float> \
---coef-file <csv> \
---coef-value <float> \
+`--mode classic|corrected`
+`--input <directory or glob>` \
+`--output <directory>` \
+`--subsample <int>` \
+`--iters <int>` \
+`--workers <int> `\
+`--seed <int> `\
+`--K <float>` \
+`--D <float> `\
+`--coef-file <csv> `\
+`--coef-value <float>` \
 
 ## Output
-
 One CSV per biome:
-
-rank, player_id, n_games, rating, run, biome
-
-Higher ratings and lower ranks indicate better performance.
+`rank, player_id, n_games, rating, run, biome`
