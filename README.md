@@ -74,9 +74,9 @@ $$
 \Delta = R'_{\text{last}} - R_{\text{last}}
 $$
 
-$$R_{\text{last}}$$ = rating of the lowest-ranked present OTU before updating
-$$R'_{\text{last}}$$  = rating after updating
-$$\Delta$$ is added to all absent OTUs.
+$$R_{\text{last}}$$ = rating of the lowest-ranked present OTU before updating\
+$$R'_{\text{last}}$$  = rating after updating\
+$$\Delta$$ is added to all absent OTUs.\
 
 This breaks zero-sum Elo and implements BB-score absence penalization.
 
