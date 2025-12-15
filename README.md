@@ -1,4 +1,5 @@
-# Repository to reproduce results from manuscript Rain-Franco, A., Andrei AS & Pernthaler, J. 2026.
+
+## Repository to reproduce results from manuscript Rain-Franco, A., Andrei A.S., & Pernthaler, J. 2026.
 Rmarkdown files and supporting material to reproduce results and statistical analyses of publication. 
 
 Repository includes:
@@ -43,9 +44,9 @@ S_{\text{observed},i} =
 $$
 
 Where:
-- '\N\' = number of OTUs in the game.  
-- '\P\_i\' = rank position of OTU \(i\) (1 = best).  
-- '\alpha\' = base coefficient .  
+- $$N$$= number of OTUs in the game.  
+- $$P\_i$$ = rank position of OTU \(i\) (1 = best).  
+- $$alpha$$ = base coefficient .  
 - Scores are normalized to sum to 1, and ties share the mean score.
 
 ### Expected score
@@ -59,10 +60,10 @@ S_{\text{expected},i} =
 $$
 
 Where:
-- 'n' = number of OTUs in the game.  
-- ```R_i``` = current rating of OTU \(i\).  
-- ```R_j``` = current rating of competitor \(j\).  
-- 'D' = logistic scale (default 400)
+- $$n$$ = number of OTUs in the game.  
+- $$R_i$$ = current rating of OTU \(i\).  
+- $$R_j$$ = current rating of competitor \(j\).  
+- $$D$$ = logistic scale (default 400)
 
 ### Rating update
 After each match, the score of each species is updated following:
@@ -76,8 +77,8 @@ Where:
 - $$\(S_{\text{observed},i}\) and \(S_{\text{expected},i}\)$$ come from the equations above.
 
 ### Absence correction (BB-score logic)
-Our proposed variation of rating score considers the relative abundance (performance) of all species present in a given sample for updating their rating, but introduces a penalization of species detected in the biome pool (or “tournament”) but absent from the focal community (“match”).
-So, each absent species will be assigned the rank of the lowest-performing species in the focal sample and its overall rank was updated accordingly. This absence-correction breaks the  zero-sum property of Elo-rating.
+Our proposed variation of rating score considers the relative abundance (performance) of all species present in a given sample for updating their rating, but introduces a penalization of species detected in the biome pool (or “tournament”) but absent from the focal community (“match”).\
+So, each absent species will be assigned the rank of the lowest-performing species in the focal sample and its overall rank was updated accordingly. This absence-correction breaks the  zero-sum property of Elo-rating.\
 Because this calculation assumes that every species occurring in a biome could potentially be present in every sample, but, “the environment selects” (reflecting the famous postulate by L. Baas-Becking), we named this absence-corrected variant of the Elo-rating the “Baas-Becking-score” (BB-score). 
 
 The absent species are penalized using the last-ranked present species.
