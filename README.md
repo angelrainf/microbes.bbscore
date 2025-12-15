@@ -43,9 +43,9 @@ S_{\text{observed},i} =
 $$
 
 Where:
-- \(N\) = number of OTUs in the game.  
-- \(P\_i\) = rank position of OTU \(i\) (1 = best).  
-- \(\alpha\) = base coefficient (`base_coef` in the script).  
+- '\N\' = number of OTUs in the game.  
+- '\P\_i\' = rank position of OTU \(i\) (1 = best).  
+- '\alpha\' = base coefficient .  
 - Scores are normalized to sum to 1, and ties share the mean score.
 
 ### Expected score
