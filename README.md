@@ -3,7 +3,8 @@
 Rmarkdown files and supporting material to reproduce results and statistical analyses of publication. 
 
 Repository includes:
--Elo-rating input
+
+-Elo-rating data (average+sd) after interations
 
 -Occurrence data
 
