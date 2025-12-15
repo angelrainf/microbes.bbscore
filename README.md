@@ -1,15 +1,23 @@
-# MultiElo_switchable.py
+# Repository to reproduce results from manuscript Rain-Franco, A., Andrei AS & Pernthaler, J. 2026.
+Rmarkdown files and supporting material to reproduce results and statistical analyses of publication. 
+
+Repository includes:
+-Elo-rating input
+-Occurrence data
+-Tutorial for Elo-rating and Bass-Becking score (BB-score) calculation.
+
+## MultiElo_switchable.py
 
 Multiplayer Elo ranking for OTUs in environmental biomes.
 Two modes are available: classic Elo and an absence-corrected variant corresponding to the Baas-Becking score (BB-score).
 
-## Concept
+### Concept
 
 Each sample (row) is treated as one multiplayer “game”.
 OTUs listed from left to right are ordered from best to worst in that game.
 Each iteration shuffles the order of games to reduce sequence effects.
 
-## Input
+### Input
 
 CSV matrices like MatrixRank_MAPbiomes_<biome>.csv.
 - Rows = samples (games)  
@@ -23,7 +31,7 @@ Example:
 |----------|----------|----------|----------|----------|
 | Specie_A | Specie_B | Specie_C | Specie_D | Specie_E |
 
-## Observed score function
+### Observed score function
 
 Observed scores follow an exponential decay function:
 
@@ -40,7 +48,7 @@ Where:
 - \(\alpha\) = base coefficient (`base_coef` in the script).  
 - Scores are normalized to sum to 1, and ties share the mean score.
 
-## Expected score
+### Expected score
 
 Expected scores use pairwise logistic win probabilities:
 
@@ -56,7 +64,7 @@ Where:
 - \(R_j\) = current rating of competitor \(j\).  
 - \(D\) = logistic scale (default 400)
 
-## Rating update
+### Rating update
 
 $$
 \text{Rating}_{t+1,i} =\text{Rating}_{t,i}+ K\left(S_{\text{observed},i} - S_{\text{expected},i}\right)
@@ -65,7 +73,8 @@ $$
 Where:
 - K = gain factor (default 10)
 - $$\(S_{\text{observed},i}\) and \(S_{\text{expected},i}\)$$ come from the equations above.
-## Absence correction (BB-score logic)
+
+### Absence correction (BB-score logic)
 
 In corrected mode, absent OTUs are penalized using the last-ranked present OTU.
 
@@ -85,7 +94,7 @@ Requires Python 3.8+.
 
 pip install numpy pandas
 
-## Usage
+### Usage
 Run on a directory:
 ```bash
 python3 MultiElo_switchable.py \
@@ -97,7 +106,7 @@ python3 MultiElo_switchable.py \
 
 
 
-## Main command-line options
+### Main command-line options
 
 `--mode classic|corrected`
 `--input <directory or glob>` \
@@ -111,6 +120,6 @@ python3 MultiElo_switchable.py \
 `--coef-file <csv> `\
 `--coef-value <float>` \
 
-## Output
+### Output
 One CSV per biome:
 `rank, player_id, n_games, rating, run, biome`
