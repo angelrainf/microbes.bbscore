@@ -1,5 +1,6 @@
 
 ## Repository to reproduce results from manuscript Rain-Franco, A., Andrei A.S., & Pernthaler, J. 2026.
+
 Rmarkdown files and supporting material to reproduce results and statistical analyses of publication. 
 
 Repository includes:
@@ -36,8 +37,7 @@ Example:
 | Specie_A | Specie_B | Specie_C | Specie_D | Specie_E |
 
 ### Observed score function
-
-Observed scores follow an exponential decay function:
+For calcuation, a scoring function is defined by a fitted decay function to the distribution of the species observed (within a group of samples) follow an exponential decay function:
 
 
 $$
@@ -54,7 +54,7 @@ Where:
 
 ### Expected score
 
- The expected score is calculated given the current ratings of all participants divided by the total number of pairwise interactions:
+The expected score is calculated given the current ratings of all participants divided by the total number of pairwise interactions:
 
 $$
 S_{\text{expected},i} =
@@ -92,9 +92,7 @@ $$
 
 $$R_{\text{last}}$$ = rating of the lowest-ranked present OTU before updating\
 $$R'_{\text{last}}$$  = rating after updating\
-$$\Delta$$ is added to all absent OTUs.\
-
-This breaks zero-sum Elo and implements BB-score absence penalization.
+$$\Delta$$ is added to all absent OTUs.
 
 ## Install
 
