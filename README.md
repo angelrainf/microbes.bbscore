@@ -4,7 +4,9 @@ Rmarkdown files and supporting material to reproduce results and statistical ana
 
 Repository includes:
 -Elo-rating input
+
 -Occurrence data
+
 -Tutorial for Elo-rating and Bass-Becking score (BB-score) calculation.
 
 ## MultiElo_switchable.py
@@ -74,7 +76,7 @@ $$
 
 Where:
 - K = gain factor (default 10)
-- $$\(S_{\text{observed},i}\) and \(S_{\text{expected},i}\)$$ come from the equations above.
+- $$\(S_{\text{observed},i}\)$$ and $$\(S_{\text{expected},i}\)$$ come from the equations above.
 
 ### Absence correction (BB-score logic)
 Our proposed variation of rating score considers the relative abundance (performance) of all species present in a given sample for updating their rating, but introduces a penalization of species detected in the biome pool (or “tournament”) but absent from the focal community (“match”).\
