@@ -21,8 +21,9 @@ OTUs listed from left to right are ordered from best to worst in that game.
 Each iteration shuffles the order of games to reduce sequence effects.
 
 ### Input
+CSV matrices like MatrixRank_<group of samples>.csv.
+Each row of the input matrix is treated as a multiplayer game based on relative abundances: OTUs are ordered from left (highest relative abundance) to right (lowest), and empty, None, or NaN cells are ignored.
 
-CSV matrices like MatrixRank_MAPbiomes_<biome>.csv.
 - Rows = samples (games)  
 - Columns = ordered OTU ranks (1st, 2nd, …)  
 - Empty, `None`, or `NaN` cells are ignored  
