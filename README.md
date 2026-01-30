@@ -1,5 +1,5 @@
 
-## Repository to reproduce results from manuscript Rain-Franco, A., Andrei A.S., & Pernthaler, J. 2026.
+## Repository to reproduce results from manuscript "Macroecology of microbial performance across Earth’s biomes" by Rain-Franco, A., Andrei A.S., & Pernthaler, J. 2026.
 
 Rmarkdown files and supporting material to reproduce results and statistical analyses of publication. 
 
