@@ -5,9 +5,7 @@ Rmarkdown files and supporting material to reproduce results and statistical ana
 
 Repository includes:
 
--Elo-rating data (average+sd) after interations.\
--Occurrence data\
--Scripts 1,2,3,4 to reproduce results
+-Scripts 1,2,3,4 to reproduce results\
 -Tutorial for Elo-rating and Bass-Becking score (BB-score) calculation.
 
 ## MultiElo_switchable.py
