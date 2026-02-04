@@ -33,6 +33,8 @@ Example:
 |   rank1  |  rank2   |   rank3  |   rank4  |   rank5  |
 |----------|----------|----------|----------|----------|
 | Specie_A | Specie_B | Specie_C | Specie_D | Specie_E |
+| Specie_B | Specie_C | Specie_A | Specie_D | Specie_E |
+| Specie_C | Specie_C | Specie_A |   None   |   None   |
 
 ### Observed score function
 For calcuation, a scoring function is defined by a fitted decay function to the distribution of the species observed (within a group of samples) follow an exponential decay function:
