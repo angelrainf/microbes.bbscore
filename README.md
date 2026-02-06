@@ -34,7 +34,7 @@ Example:
 |----------|----------|----------|----------|----------|
 | Specie_A | Specie_B | Specie_C | Specie_D | Specie_E |
 | Specie_B | Specie_C | Specie_A | Specie_D | Specie_E |
-| Specie_C | Specie_C | Specie_A |   None   |   None   |
+| Specie_C | Specie_D | Specie_E |   None   |   None   |
 
 ### Observed score function
 For calcuation, a scoring function is defined by a fitted decay function to the distribution of the species observed (within a group of samples) follow an exponential decay function:
