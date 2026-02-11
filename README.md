@@ -11,7 +11,7 @@ Repository includes:
 ## MultiElo_switchable.py
 
 Multiplayer Elo ranking for OTUs in environmental biomes.
-Two modes are available: classic Elo and an absence-corrected variant corresponding to the Baas-Becking score (BB-score).
+Two modes are available: classic Elo and an absence-corrected variant corresponding to the Baas-Becking score . Elo-ratings are update across multiple communities, changes in relative abundance across samples are reflected in a rank-based score, thereby providing a comparative measure of ecological performance. We changed one assumption of the original Elo framework (“you don’t play, you don’t lose”), a zero-sum ranking parameter by incorporating taxa absences in the group of communities (“you don’t play, you lose”). Then obtaining a scalable "metacommunity" phylotype-level/population index of relative performance. 
 
 ### Concept
 
