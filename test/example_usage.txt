@@ -1,0 +1,29 @@
+#Minimal example only n=1000, iterations=1
+
+## Corrected Elo-rating (BB-score)
+python3 MultiElo_switchable.py \
+  --mode corrected \
+  --input "MatrixRank_MAPbiomes_peatland.1.csv" \
+--output "results/"\
+  --subsample 1000 \
+  --iters 1 \
+  --workers 1 \
+  --seed 667 \
+  --K 10 \
+  --D 400 \
+  --coef-value 1.017
+ 
+ 
+## Corrected Elo-rating (BB-score)
+python3 MultiElo_switchable.py \
+  --mode classic \
+  --input "MatrixRank_MAPbiomes_peatland.1.csv" \
+--output "results/"\
+  --subsample 1000 \
+  --iters 1 \
+  --workers 1 \
+  --seed 667 \
+  --K 10 \
+  --D 400 \
+  --coef-value 1.017
+
